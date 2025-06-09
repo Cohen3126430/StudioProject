@@ -4,3 +4,11 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
+
+// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import { AppComponent } from './app/app.component';
+// import '@angular/compiler'; // הוסף שורה זו
+
+// platformBrowserDynamic()
+//   .bootstrapModule(AppComponent)
+//   .catch(err => console.error(err));

@@ -1,0 +1,18 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* רווח בין הפריטים */
+}
+
+.gallery-item {
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: calc(33% - 16px); /* שלושה פריטים בשורה */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* #begining{
+  background-color: aqua;
+} */

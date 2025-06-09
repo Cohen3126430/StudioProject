@@ -1,0 +1,41 @@
+<p>login works!</p>
+
+<form class="example-form" action="" [formGroup]="form" (ngSubmit)="whatIsMyRole()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+           placeholder="ישראל ישראלי">
+    <mat-hint>good!</mat-hint>
+    @if (nameFormControl.hasError('name') && !nameFormControl.hasError('required')) {
+      <mat-error>Please enter a valid name</mat-error>
+    }
+    @if (nameFormControl.hasError('required')) {
+      <mat-error>name is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>password</mat-label>
+    <input type="text" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+           placeholder="123456">
+    <mat-hint>good!</mat-hint>
+    @if (nameFormControl.hasError('password') && !passwordFormControl.hasError('required')) {
+      <mat-error>Please enter a valid password</mat-error>
+    }
+    @if (passwordFormControl.hasError('required')) {
+      <mat-error>password is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <button mat-raised-button matTooltip=" לכניסה ">enter</button>
+</form>
+
+<!-- <p>login works!</p>
+<form dir="rtl" action="" [formGroup]="form" (ngSubmit)="whatIsMyRole()">
+    <input name="name" type="text" placeholder="name" formControlName="name"><br><br>
+    <input name="password" type="text" placeholder="password" formControlName="password"><br><br>
+    <mat-form-field>
+        <mat-label>password</mat-label>
+        <input matInput>
+    </mat-form-field>
+
+    <button mat-raised-button matTooltip=" לכניסה ">enter</button>
+</form> -->

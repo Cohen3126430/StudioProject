@@ -1,0 +1,9 @@
+<p>lesson-list works!</p>
+
+<div class="gallery">
+  <div class="gallery-item" *ngFor="let lesson of lessons; let i = index" #lessonItem>
+      <h2>{{ lesson.lessonName }}</h2>
+      <p>מורה: {{ lesson.teacherName }}</p>
+      <button mat-raised-button matTooltip=" לפרטים "(click)="selectLesson(lesson)"  >details</button>
+    </div>
+</div>

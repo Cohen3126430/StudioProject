@@ -1,0 +1,10 @@
+<p>lesson-details works!</p>
+<div *ngIf="lesson" #lessonItem>
+    <h2>{{ lesson.lessonName }}</h2>
+    <p>{{ lesson.teacherName }}</p>
+    <p>{{ lesson.numberOfSessions }}</p>
+    <p>תאריך התחלה: {{ lesson.startDate }}</p>
+    <p>מחיר: {{ lesson.price }}</p>
+    <p>יום: {{ lesson.day }}</p>
+    <p>שעה: {{ lesson.time }}</p>
+  </div>
