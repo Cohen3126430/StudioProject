@@ -1,0 +1,11 @@
+.student-info {
+    background-color: #f0f8ff; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px 0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.student-info p {
+    color: #007acc; 
+}

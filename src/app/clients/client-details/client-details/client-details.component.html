@@ -1,10 +1,9 @@
-<p>client-details works!</p>
-<div *ngIf="student">
-    <h2>{{ student.firstName }}</h2>
-    <p> {{ student.lastName }}</p>
-    <p>ת.ז{{ student.idNumber }}</p>
-    <p>טלפון: {{ student.phone }}</p>
-    <p>שיעור: {{ student.lesson }}</p>
-    <p>מחיר: {{ student.price }}</p>
-    <p>האם שולם:{{ student.isPaid }}</p>
-  </div>
+<div *ngIf="student" class="student-info">
+  <h2>{{ student.firstName }}</h2>
+  <h2> {{ student.lastName }}</h2>
+  <p>ת.ז :{{ student.idNumber }}</p>
+  <p>טלפון: {{ student.phone }}</p>
+  <p>שיעור: {{ student.lesson }}</p>
+  <p>מחיר: {{ student.price }}</p>
+  <p>האם שולם:{{ student.isPaid }}</p>
+</div>

@@ -1,10 +1,14 @@
-<p>lesson-details works!</p>
-<div *ngIf="lesson" #lessonItem>
-    <h2>{{ lesson.lessonName }}</h2>
-    <p>{{ lesson.teacherName }}</p>
-    <p>{{ lesson.numberOfSessions }}</p>
-    <p>תאריך התחלה: {{ lesson.startDate }}</p>
-    <p>מחיר: {{ lesson.price }}</p>
-    <p>יום: {{ lesson.day }}</p>
-    <p>שעה: {{ lesson.time }}</p>
-  </div>
+<mat-card class="lesson-card">
+  <mat-card-header *ngIf="lesson" #lessonItem>
+    <mat-card-title *ngIf="lesson.lessonName">{{ lesson?.lessonName }}</mat-card-title>
+    <mat-card-subtitle *ngIf="lesson.teacherName">{{ lesson?.teacherName }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content *ngIf="lesson">
+    <p><strong>מספר מפגשים:</strong> {{ lesson?.numberOfSessions }}</p>
+    <p [ngStyle]="{ color: hasLessonStarted(lesson) ? 'red' : 'black' }"><strong>תאריך התחלה:</strong> {{ lesson?.startDate }}</p>
+    <p><strong>מחיר:</strong> {{ lesson?.price }} ₪</p>
+    <p><strong>יום:</strong> {{ lesson?.day }}</p>
+    <p><strong>שעה:</strong> {{ lesson?.time }}</p>
+  </mat-card-content>
+</mat-card>
