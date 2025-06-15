@@ -12,7 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   templateUrl: './lesson-list.component.html',
   styleUrls: ['./lesson-list.component.css'],
   standalone: true,
-  imports: [NgFor, NgIf, LessonDetailsComponent,MatTooltipModule,MatButtonModule],
+  imports: [NgFor,MatTooltipModule,MatButtonModule],
 })
 export class LessonsListComponent implements OnInit, AfterViewInit {
 
@@ -77,7 +77,7 @@ export class LessonsListComponent implements OnInit, AfterViewInit {
     this.lessons.forEach((lesson, index) => {
       console.log("lessonItems : "+this.lessonItems.toArray());
         console.log("lessons : "+this.lessons);
-      if (lesson?.startDate.getTime() < this.current_date) {
+      if (lesson.startDate.getTime() < this.current_date) {
         const lessonElement = this.lessonItems.toArray()[index].nativeElement; // קבלת האלמנט המתאים
         this.renderer.setProperty(lessonElement, 'id', 'begining');
         this.renderer.setStyle(lessonElement, 'background-color', 'aqua');
@@ -88,7 +88,7 @@ export class LessonsListComponent implements OnInit, AfterViewInit {
   selectedLesson: Lesson | null = null;
 
   selectLesson(lesson: Lesson) {
-    this.lessonService.setSelectedLesson(lesson); // שמור את השיעור בשירות
+    this.lessonService.setSelectedLesson(lesson);
     this.router.navigate(['../lessonDetails']); 
   }
 }

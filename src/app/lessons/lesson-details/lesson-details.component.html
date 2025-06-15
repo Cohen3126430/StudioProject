@@ -1,14 +1,14 @@
 <mat-card class="lesson-card">
   <mat-card-header *ngIf="lesson" #lessonItem>
-    <mat-card-title *ngIf="lesson.lessonName">{{ lesson?.lessonName }}</mat-card-title>
-    <mat-card-subtitle *ngIf="lesson.teacherName">{{ lesson?.teacherName }}</mat-card-subtitle>
+    <mat-card-title *ngIf="lesson.lessonName">{{ lesson.lessonName }}</mat-card-title>
+    <mat-card-subtitle *ngIf="lesson.teacherName">{{ lesson.teacherName }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content *ngIf="lesson">
-    <p><strong>מספר מפגשים:</strong> {{ lesson?.numberOfSessions }}</p>
-    <p [ngStyle]="{ color: hasLessonStarted(lesson) ? 'red' : 'black' }"><strong>תאריך התחלה:</strong> {{ lesson?.startDate }}</p>
-    <p><strong>מחיר:</strong> {{ lesson?.price }} ₪</p>
-    <p><strong>יום:</strong> {{ lesson?.day }}</p>
-    <p><strong>שעה:</strong> {{ lesson?.time }}</p>
+    <p><strong>מספר מפגשים:</strong> {{ lesson.numberOfSessions }}</p>
+    <p [ngStyle]="{ color: hasLessonStarted(lesson) ? 'red' : 'black' }"><strong>תאריך התחלה:</strong> {{ lesson.startDate }}</p>
+    <p><strong>מחיר:</strong> {{ lesson.price }} ₪</p>
+    <p><strong>יום:</strong> {{ lesson.day }}</p>
+    <p><strong>שעה:</strong> {{ lesson.time }}</p>
   </mat-card-content>
 </mat-card>
