@@ -33,7 +33,7 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.registrations = [
- {
+{
         firstName: "מיה",
         lastName: "כהן",
         phone: "050-1234567",
@@ -77,19 +77,25 @@ export class ClientsComponent implements OnInit {
         lesson: "שיעור אירובי",
         price: 400,
         isPaid: true
-    }
-];
-}
+    }    ];
+  }
 
   onGridReady(params: any) {
     params.api.forEachNode((node: any) => {
       const button = document.getElementById(`btn-${node.data.idNumber}`);
       if (button) {
         button.addEventListener('click', () => this.viewClientDetails(node.data));
-        if (node.data.isPaid === false) {
-            this.renderer.setStyle(button, 'background-color', 'red');
-            this.renderer.setStyle(button, 'color', 'white');
-        }
+      }
+    });
+    this.setButtonStyles();
+  }
+
+  setButtonStyles() {
+    this.registrations.forEach(registration => {
+      const button = document.getElementById(`btn-${registration.idNumber}`);
+      if (button && registration.isPaid === false) {
+        this.renderer.setStyle(button, 'background-color', 'red');
+        this.renderer.setStyle(button, 'color', 'white');
       }
     });
   }

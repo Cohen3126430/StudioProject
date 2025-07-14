@@ -10,9 +10,9 @@ import { ClientDetailsComponent } from './clients/client-details/client-details/
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'clients', component: ClientsComponent },
-    { path: 'lessonsList', component: LessonsListComponent},
-    { path: 'lessonDetails', component: LessonDetailsComponent},
-    {path:'clientDetails',component:ClientDetailsComponent},
+    { path: 'lessonsList', component: LessonsListComponent },
+    { path: 'lessonDetails', component: LessonDetailsComponent },
+    { path: 'clientDetails', component: ClientDetailsComponent },
     { path: '', component: LoginComponent },
     { path: '**', component: NoValidComponent }
 ];
