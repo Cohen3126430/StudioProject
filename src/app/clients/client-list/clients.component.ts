@@ -1,5 +1,5 @@
 import { AllCommunityModule, ColDef, ICellRendererParams, ModuleRegistry } from 'ag-grid-community';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
 import { AgGridModule } from 'ag-grid-angular';
 import { StudentRegistration } from '../../Models/client.model';
 import { ClientServiceService } from '../client-service/client-service.service';
@@ -14,11 +14,11 @@ ModuleRegistry.registerModules([AllCommunityModule]);
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.css']
 })
-export class ClientsComponent implements OnInit {
-  
+export class ClientsComponent implements OnInit, AfterViewInit {
+
   colDefs: ColDef[] = [
-    { field: "firstName", filter: true},
-    { field: "lastName", filter: true},
+    { field: "firstName", filter: true },
+    { field: "lastName", filter: true },
     { 
       headerName: "Details", 
       cellRenderer: (params: ICellRendererParams) => {
@@ -80,22 +80,32 @@ export class ClientsComponent implements OnInit {
     }    ];
   }
 
+  ngAfterViewInit(): void {
+    this.setButtonStyles(); // הגדר סגנונות לאחר שהקומפוננטה נטענה
+  }
+
   onGridReady(params: any) {
     params.api.forEachNode((node: any) => {
       const button = document.getElementById(`btn-${node.data.idNumber}`);
       if (button) {
+        button.removeEventListener('click', () => this.viewClientDetails(node.data)); // הסרת אירוע קודם
         button.addEventListener('click', () => this.viewClientDetails(node.data));
       }
     });
-    this.setButtonStyles();
+    this.setButtonStyles(); // הגדר סגנונות לאחר שהגריד מוכן
   }
 
   setButtonStyles() {
     this.registrations.forEach(registration => {
       const button = document.getElementById(`btn-${registration.idNumber}`);
-      if (button && registration.isPaid === false) {
-        this.renderer.setStyle(button, 'background-color', 'red');
-        this.renderer.setStyle(button, 'color', 'white');
+      if (button) {
+        if (registration.isPaid === false) {
+          this.renderer.setStyle(button, 'background-color', 'red');
+          this.renderer.setStyle(button, 'color', 'white');
+        } else {
+          this.renderer.removeStyle(button, 'background-color');
+          this.renderer.removeStyle(button, 'color');
+        }
       }
     });
   }
