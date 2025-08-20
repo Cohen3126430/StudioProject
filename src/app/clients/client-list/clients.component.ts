@@ -100,8 +100,8 @@ export class ClientsComponent implements OnInit, AfterViewInit {
       const button = document.getElementById(`btn-${registration.idNumber}`);
       if (button) {
         if (registration.isPaid === false) {
-          // this.renderer.setStyle(button, 'background-color', 'red');
-          this.renderer.setStyle(button, 'color', 'white');
+          this.renderer.setStyle(button, 'background-color', 'red');
+          // this.renderer.setStyle(button, 'color', 'white');
         } else {
           this.renderer.removeStyle(button, 'background-color');
           this.renderer.removeStyle(button, 'color');
