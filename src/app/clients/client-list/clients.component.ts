@@ -30,7 +30,6 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   registrations: StudentRegistration[] = [];
 
   constructor(private renderer: Renderer2, private router: Router, private clientService: ClientServiceService) {}
-const testError: string = 123;
 
   ngOnInit(): void {
     this.registrations = [
@@ -79,7 +78,9 @@ const testError: string = 123;
         price: 400,
         isPaid: true
     }    ];
-  }
+      if (true) {
+    throw new Error('💥 בדיקה: שגיאה מכוונת בזמן ריצה');
+  };}
 
   ngAfterViewInit(): void {
     this.setButtonStyles(); // הגדר סגנונות לאחר שהקומפוננטה נטענה
