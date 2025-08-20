@@ -35,12 +35,20 @@
             "scripts": []
           },
           "configurations": {
+            "production-ci": {
+              "budgets": [],
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "inspect": false
+            },
             "production": {
               "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "10MB"
+                  "maximumError": "3MB"
                 },
                 {
                   "type": "anyComponentStyle",
