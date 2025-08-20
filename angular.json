@@ -40,8 +40,7 @@
               "outputHashing": "all",
               "optimization": true,
               "sourceMap": false,
-              "extractLicenses": true,
-              "inspect": false
+              "extractLicenses": true
             },
             "production": {
               "budgets": [
