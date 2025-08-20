@@ -30,7 +30,7 @@ jobs:
 
       # שלב 5 – Build בפרופיל Production
       - name: Build Angular App
-        run: npm run build -- --configuration=production --no-budgets
+        run: npm run build -- --configuration=production-ci
 
   summary:
     runs-on: ubuntu-latest
