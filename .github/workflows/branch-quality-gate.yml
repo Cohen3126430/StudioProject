@@ -30,8 +30,8 @@ jobs:
         run: npm ci
 
       # שלב 4 – הרצת Unit Tests עם Headless Chrome
-      - name: Run Unit Tests
-        run: echo "Skipping FE tests for now"
+      - name: Run Unit Tests in Headless Chrome
+        run: npx karma start karma.conf.js --single-run --browsers ChromeHeadless
 
       # שלב 5 – Build בפרופיל Production
       - name: Build Angular App
