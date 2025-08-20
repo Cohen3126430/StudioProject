@@ -17,7 +17,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 export class ClientsComponent implements OnInit, AfterViewInit {
 
   colDefs: ColDef[] = [
-    // { field: "firstName", filter: true },
+    { field: "firstName", filter: true },
     { field: "lastName", filter: true },
     { 
       headerName: "Details", 
@@ -30,6 +30,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   registrations: StudentRegistration[] = [];
 
   constructor(private renderer: Renderer2, private router: Router, private clientService: ClientServiceService) {}
+const testError: string = 123;
 
   ngOnInit(): void {
     this.registrations = [
