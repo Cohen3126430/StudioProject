@@ -79,7 +79,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
         isPaid: true
     }    ];
       if (true) {
-    throw new Error('💥 בדיקה: שגיאה מכוונת בזמן ריצה');
+    throw new Error('💥 check with ng test: שגיאה מכוונת בזמן ריצה');
   };}
 
   ngAfterViewInit(): void {
