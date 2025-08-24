@@ -40,7 +40,7 @@ jobs:
       # שלב 6 – Smoke Test לוודא שאין שגיאות Runtime מיידיות
       - name: Run Smoke Test
         run: |
-          npx http-server ./dist/studio-project -p 4200 -P http://localhost:4200? &
+          npx http-server ./dist/studio-project -p 4200 -P http://localhost:4200 &
           SERVER_PID=$!
           sleep 5
           
