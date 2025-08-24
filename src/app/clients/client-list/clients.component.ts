@@ -30,6 +30,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   registrations: StudentRegistration[] = [];
 
   constructor(private renderer: Renderer2, private router: Router, private clientService: ClientServiceService) {}
+const testError: string = 123;
 
   ngOnInit(): void {
     this.registrations = [
