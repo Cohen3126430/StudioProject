@@ -17,7 +17,7 @@ permissions:
   issues: write
 
 env:
-  DIST_DIR: dist/studio-project  
+  DIST_DIR: dist/studio-project/browser
   PORT: 4200
   CI: "true"
   NODE_OPTIONS: "--max_old_space_size=4096"
@@ -57,8 +57,18 @@ jobs:
    
       - name: Verify dist exists
         run: |
-          test -d "$DIST_DIR" || (echo "❌ $DIST_DIR not found" && exit 1)
-          test -f "$DIST_DIR/index.html" || (echo "❌ index.html missing under $DIST_DIR" && exit 1)
+          echo "DIST_DIR=$DIST_DIR"
+          if [ ! -d "$DIST_DIR" ]; then
+          echo "❌ $DIST_DIR not found"
+          echo "Dist tree:" && ls -la dist || true
+          exit 1
+          fi
+          if [ ! -f "$DIST_DIR/index.html" ]; then
+          echo "❌ index.html missing under $DIST_DIR"
+          ls -la "$DIST_DIR" || true
+          exit 1
+          fi
+
 
 
       - name: Smoke Test
