@@ -17,7 +17,7 @@ permissions:
   issues: write
 
 env:
-  DIST_DIR: dist/studio-project/browser
+  DIST_DIR: dist/studio-project
   PORT: 4200
   CI: "true"
   NODE_OPTIONS: "--max_old_space_size=4096"
