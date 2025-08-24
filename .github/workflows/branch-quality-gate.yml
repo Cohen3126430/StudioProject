@@ -54,17 +54,16 @@ jobs:
 
       - name: Build (production-ci)
         run: npm run build -- --configuration=production-ci
-        
+   
       - name: Verify dist exists
         run: |
-          if [ ! -d "$DIST_DIR" ]; then
-            echo "❌ DIST_DIR '$DIST_DIR' not found. Check angular.json outputPath or update env.DIST_DIR."
-            exit 1
-          fi
+          test -d "$DIST_DIR" || (echo "❌ $DIST_DIR not found" && exit 1)
+          test -f "$DIST_DIR/index.html" || (echo "❌ index.html missing under $DIST_DIR" && exit 1)
+
 
       - name: Smoke Test
         run: |
-          npx http-server "$DIST_DIR" -p "$PORT" &
+          npx http-server "$DIST_DIR" -p "$PORT" -s &
           SERVER_PID=$!
 
           for i in {1..10}; do
