@@ -78,7 +78,9 @@ export class ClientsComponent implements OnInit, AfterViewInit {
         price: 400,
         isPaid: true
     }    ];
-  }
+      if (true) {
+    throw new Error('💥 check with ng test: שגיאה מכוונת בזמן ריצה');
+  };}
 
   ngAfterViewInit(): void {
     this.setButtonStyles(); // הגדר סגנונות לאחר שהקומפוננטה נטענה
