@@ -18,7 +18,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
 
   colDefs: ColDef[] = [
     { field: "firstName", filter: true },
-    { field: "lastName", filter: true },
+    // { field: "lastName", filter: true },
     { 
       headerName: "Details", 
       cellRenderer: (params: ICellRendererParams) => {
@@ -78,7 +78,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
         price: 400,
         isPaid: true
     }    ];
-  }
+      }
 
   ngAfterViewInit(): void {
     this.setButtonStyles(); // הגדר סגנונות לאחר שהקומפוננטה נטענה
