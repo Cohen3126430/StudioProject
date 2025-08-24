@@ -17,7 +17,7 @@ permissions:
   issues: write
 
 env:
-  DIST_DIR: dist/studio-project
+  DIST_DIR: dist/studio-project/browser  
   PORT: 4200
   CI: "true"
   NODE_OPTIONS: "--max_old_space_size=4096"
@@ -53,8 +53,8 @@ jobs:
       #   run: npm run lint
 
       - name: Build (production-ci)
-        run: npm run build -- --configuration=production-ci
-
+        run: npm run build -- --configuration=production-ci  --output-path=dist/studio-project/browser
+        
       - name: Verify dist exists
         run: |
           if [ ! -d "$DIST_DIR" ]; then
