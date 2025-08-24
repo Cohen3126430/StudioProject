@@ -78,7 +78,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
         price: 400,
         isPaid: true
     }    ];
-  }
+      }
 
   ngAfterViewInit(): void {
     this.setButtonStyles(); // הגדר סגנונות לאחר שהקומפוננטה נטענה
