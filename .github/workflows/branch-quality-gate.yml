@@ -53,7 +53,7 @@ jobs:
       #   run: npm run lint
 
       - name: Build (production-ci)
-        run: npm run build -- --configuration=production-ci  --output-path=dist/studio-project/browser
+        run: npm run build -- --configuration=production-ci
         
       - name: Verify dist exists
         run: |
