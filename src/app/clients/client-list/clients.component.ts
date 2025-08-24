@@ -17,8 +17,8 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 export class ClientsComponent implements OnInit, AfterViewInit {
 
   colDefs: ColDef[] = [
-    // { field: "firstName", filter: true },
-    { field: "lastName", filter: true },
+    { field: "firstName", filter: true },
+    // { field: "lastName", filter: true },
     { 
       headerName: "Details", 
       cellRenderer: (params: ICellRendererParams) => {
